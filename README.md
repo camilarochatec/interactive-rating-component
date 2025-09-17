@@ -9,7 +9,7 @@ Este projeto é um componente de interface de usuário (UI) que permite aos usu�
 
 ### Ao Vivo
 
-**[Clique aqui para interagir com o projeto](https://www.google.com/search?q=URL_DO_SEU_DEPLOY_AQUI)**
+**[Clique aqui para interagir com o projeto](https://interactive-rating-component-two-tau.vercel.app/)**
 
 
 ### GIF de Demonstração
