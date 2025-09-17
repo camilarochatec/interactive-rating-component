@@ -5,7 +5,7 @@ Esta é uma solução para o desafio [Interactive rating component](https://www.
 ## 🎯 Sobre o Projeto
 
 Este projeto é um componente de interface de usuário (UI) que permite aos usuários fornecer uma avaliação de 1 a 5. É um excelente exemplo de como lidar com estado, interatividade e feedback visual em uma aplicação front-end moderna. O objetivo foi criar uma experiência de usuário fluida e responsiva, seguindo o design proposto pelo Frontend Mentor.
------
+
 
 ### Ao Vivo
 
@@ -47,7 +47,7 @@ Este projeto, embora compacto, foi uma ótima oportunidade para aplicar e demons
 
 ```bash
 # 1. Clone o repositório
-git clone https://URL_DO_SEU_REPOSITORIO.git
+git clone https://github.com/camilarochatec/interactive-rating-component.git
 
 # 2. Navegue até o diretório do projeto
 cd nome-do-projeto

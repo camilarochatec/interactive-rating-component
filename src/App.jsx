@@ -1,4 +1,4 @@
-import Rating from "./components/rating";
+import Rating from "./components/Rating";
 
 const App = () => {
   return (
