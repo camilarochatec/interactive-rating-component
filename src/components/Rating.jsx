@@ -1,5 +1,6 @@
 import { useState } from "react";
 import SubmitButton from "./SubmitButton";
+import starIcon from '../assets/icon-star.svg'; 
 
 const Rating = () => {
     // Estados para controlar o funcionamento do componente
@@ -33,7 +34,7 @@ const Rating = () => {
                         <div>{/*criamos uma nova div */}
                             <div className="bg-gray-700 w-12 h-12 rounded-full flex items-center justify-center ">
                                 {/* Container da estrela */}
-                                <img src="src/assets/icon-star.svg" alt="ícone de estrela" />
+                                <img src={starIcon} alt="ícone de estrela" />
                             </div>
 
                             <h2 className="text-white text-2xl font-bold mt-6 mb-2">
