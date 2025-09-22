@@ -1,7 +1,7 @@
 import { useState } from "react";
 import SubmitButton from "./SubmitButton";
-import starIcon from '../assets/icon-star.svg'; 
-
+import starIcon from '../assets/icon-star.svg';
+import thankYouImage from '../assets/illustration-thank-you.svg';
 const Rating = () => {
     // Estados para controlar o funcionamento do componente
     const [selecionado, setSelecionado] = useState(null); // Nota selecionada
@@ -44,12 +44,12 @@ const Rating = () => {
                                 Por favor, deixe sua avaliação sobre o atendimento.
                             </p>
                             <div className="flex justify-between my-6">
-                                {[1, 2, 3, 4, 5].map((nota) => (
+                                {[1, 2, 3, 4, 5].map((nota,posicao) => (
                                     <button
-                                        key={nota}
+                                        key={posicao} // Adiciona uma key única para cada botão
                                         onClick={() => avaliacaoSelecionada(nota)}
                                         className={`w-12 h-12 rounded-full font-bold  transition-colors ${selecionado === nota ? 'bg-orange-500 text-white'
-                                            : 'bg-gray-700 text-gray-400 hover:bg-gray-400 hover:text-white'
+                                            : 'bg-gray-700 text-gray-400 hover:bg-gray-400 hover:text-white cursor-pointer'
                                             }`}
                                     >
                                         {nota}
@@ -57,7 +57,8 @@ const Rating = () => {
                                 ))}
                             </div>
                             {/* O componente SubmitButton será renderizado aqui */}
-                            <SubmitButton onClick={enviarAvaliacao} />
+                            <SubmitButton onClick={enviarAvaliacao} 
+                            titulo={"enviar"} />
                         </div>
                     )}
             </div>
@@ -71,32 +72,28 @@ const Rating = () => {
 const Obrigado = ({ nota }) => {
     return (
         <div className="flex flex-col items-center text-center">
-            {/* Imagem de agradecimento virá aqui */}
-            <p className="bg-gray-700 text-orange-500 rounded-full px-4 py-1 mb-6">Você avaliou nosso serviço como: {nota} de 5</p>
-            <h2 className="text-white text-2xl font-bold mb-2">Obrigado!</h2>
-            <p className="text-gray-400 leading-relaxed">Nós realmente apreciamos seu feedback.</p>
-
-        </div>
+                <img src={thankYouImage} alt="icone de cartão" />
+                <p className="bg-gray-700 text-orange-500 rounded-full px-4 py-1  mt-6 mb-6">Você avaliou nosso serviço como:<br /> {nota} de 5</p>
+                <h2 className="text-white text-2xl font-bold mb-2">Obrigado!</h2>
+                <p className="text-gray-400 leading-relaxed">Nós realmente apreciamos seu feedback.</p>
+                <a className="text-blue-500 leading-relaxed font-bold mt-6 line underline" href="#">Home</a>
+            </div>
     );
 }
 
 // --- Componente AlertModal (Lógica: recebe prop 'fechar') ---
-const AlertModal = ({fechar}) => {
+const AlertModal = ({ fechar }) => {
     return (
         <div className="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center p-4" >
             <div className="bg-white p-8 rounded-lg text-center shadow-xl max-w-sm w-full">
                 <h3 className="text-xl font-bold text-gray-800 mb-2">Ooops!</h3>
                 <p className="text-gray-600 mb-6">Por favor, selecione uma nota antes de enviar.</p>
-                <button 
-                onClick={fechar}
-                className="bg-orange-500 text-white px-6 py-2 rounded-full hover:bg-orange-600">Fechar</button>
+                <button
+                    onClick={fechar}
+                    className="bg-orange-500 text-white px-6 py-2 rounded-full hover:bg-orange-600 cursor-pointer">Fechar</button>
             </div>
         </div>
     );
 }
-
-
-
-
 
 export default Rating;
